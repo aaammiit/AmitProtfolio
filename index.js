@@ -46,7 +46,7 @@ observer.observe(skillSection);
 
 // exp js
 
-const headingText1 = "Python Django Developer, Krima Solutions (july 2024 - Present)";
+const headingText1 = "Python Django Developer, Krima Solutions (March 2024 - June 2024)";
 const paragraphText1 = `Worked on projects involving Django, Python, Web Design, and Python libraries like Pandas, Openpyxl, and Tkinter. Implemented features including user authentication, email verification, and email OTP verification. Additionally, utilized version control systems like Git and GitHub to manage code repositories, ensuring efficient collaboration and versioning.`;
 let headingWords1 = headingText1.split(" ");
 let paragraphWords1 = paragraphText1.split(" ");
@@ -73,8 +73,8 @@ addWord1(document.getElementById("h41"), headingWords1, headingIndex1);
 
 
 
-const headingText2 = "Python Django Developer Intern, Krima Solutions (March 2024 - June 2024)";
-const paragraphText2 = `Assisted in projects involving Django, Python, Web Design, and Python libraries like Pandas, Openpyxl, and Tkinter. Contributed to implementing features including user authentication, email verification, and email OTP verification. Additionally, gained experience with version control systems like Git and GitHub to manage code repositories, ensuring efficient collaboration and versioning. During my internship, I also learned about cloud computing using AWS, and expanded my knowledge of Python libraries, including NumPy, Matplotlib, and Scikit-learn.`;
+const headingText2 = "Software Engineer (Python Developer), Neosoft Technologies Pvt. Ltd, (June 2024 - Present)";
+const paragraphText2 = `working on client-side solutions by integrating Python-based backend services with front-end interfaces. Experienced in building interactive applications, automating workflows, and delivering efficient, client-focused solutions.`;
 let headingWords2 = headingText2.split(" ");
 let paragraphWords2 = paragraphText2.split(" ");
 let headingIndex2 = 0;
