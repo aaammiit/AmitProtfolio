@@ -1,4 +1,3 @@
-
 html {
     scroll-behavior: smooth;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -6,78 +5,64 @@ html {
 
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* toggel dark/white mode */
+body {
+    background-color: #fff;
+    color: #000;
+    transition: all 0.3s ease;
+}
 
-body.dark-mode{
-    background-color: #faf8f6b4 !important; /* dark background */
-    color: #f0e9e9 !important; /* light text color */
-  }
-
-  body.dark-mode nav{
+/* -----------------------------
+   Dark Mode
+----------------------------- */
+body.dark-mode {
     background-color: #faf8f6b4 !important;
-  }
-
-body.dark-mode nav a{   
-    color: #000 !important;
-    
-}
-body.dark-mode nav label{   
-    color: #000 !important;
-    
+    color: #f0e9e9 !important;
 }
 
-body.dark-mode .container .social p{
-    color: #000 !important;
+body.dark-mode nav,
+body.dark-mode .container,
+body.dark-mode .project .card,
+body.dark-mode .certificates {
+    background-color: #faf8f6b4 !important;
 }
 
-body.dark-mode .exp h4{
-    color: #000 !important;
-}
-body.dark-mode .exp p{
-    color: #000 !important;
-}
-
-body.dark-mode .container2 span{
-color: #000 !important;
-}
-body.dark-mode .container2 strong{
-    color: #342e2e !important;
-    }
-
-body.dark-mode .project h5{
+body.dark-mode nav a,
+body.dark-mode nav label,
+body.dark-mode .container .social p,
+body.dark-mode .exp h4,
+body.dark-mode .exp p,
+body.dark-mode .container2 span,
+body.dark-mode .container2 strong,
+body.dark-mode .project h5,
+body.dark-mode .project i,
+body.dark-mode .project p,
+body.dark-mode .certificates h3,
+body.dark-mode .lb1 {
     color: #000 !important;
 }
 
-body.dark-mode .project i{
-    color: #393737 !important;
-}
-body.dark-mode .project p{
-    color: #080808 !important;
-}
-
-body.dark-mode .certificates h3{
-    color: #000 !important;
-}
-
-body.dark-mode .navbar-toggler-icon{
+body.dark-mode .navbar-toggler-icon {
     background-color: #000 !important;
 }
 
-body.dark-mode .lb1{
-    color: #000;
+/* -----------------------------
+   Container & Layout
+----------------------------- */
+.container,
+.container1,
+.container2 {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
 }
 
-  
-
-
 .container {
-
     color: #fff;
-    padding: 20px;
 }
 
 .portfolio {
@@ -94,20 +79,16 @@ body.dark-mode .lb1{
     width: 90%;
     margin: 0 auto;
     padding: 20px;
-
 }
 
-.text {
+.text,
+.photo {
     flex: 1;
     text-align: center;
 }
 
 .photo {
-    flex: 1;
-    text-align: center;
     mask-image: linear-gradient(to top, transparent, #000);
-
-
 }
 
 img {
@@ -116,15 +97,16 @@ img {
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(66, 64, 64, 0.1);
     mix-blend-mode: difference;
-    opacity: 1;
-
 }
 
-
+/* -----------------------------
+   Text Animations
+----------------------------- */
 .text h2.display-4,
 .text p.lead {
-    overflow: hidden;
-    white-space: wrap;
+    overflow: hidden;       /* hides overflowing text */
+    white-space: normal;    /* allows text to wrap */
+    word-wrap: break-word;  /* optional, breaks long words */
 }
 
 .text h2.display-4 span,
@@ -134,125 +116,43 @@ img {
 }
 
 @keyframes caret {
-    0% {
-        border-right-color: black;
-    }
-
-    50% {
-        border-right-color: transparent;
-    }
-
-    100% {
-        border-right-color: black;
-    }
+    0%, 100% { border-right-color: black; }
+    50% { border-right-color: transparent; }
 }
 
-
-/* add media queries to make it responsive */
+/* -----------------------------
+   Responsive Layouts
+----------------------------- */
 @media only screen and (max-width: 768px) {
     .content {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        margin: 0 auto;
-        padding: 20px;
         align-items: stretch;
-        /* stretch the content to full width on small screens */
     }
-
     .photo,
     .text {
-        margin: 10px;
-        /* reduce margin on small screens */
+        margin: 10px 0;
     }
 }
 
-.container1 {
-    max-width: 1200px;
-font-size: 12px;
-    padding: 20px;
+@media (max-width: 576px) {
+    .certificates {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* -----------------------------
+   Skills & Cards Animations
+----------------------------- */
 .skill {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.5s, transform 0.5s;
-    
 }
 
 .skill.animated {
     opacity: 1;
     transform: translateY(0);
 }
-
-.skill {
-    transform: translateY(50px);
-    transition: transform 0.5s;
-}
-
-.skill.animated {
-    transform: translateY(0);
-}
-
-.skill.not-animated {
-    opacity: 1;
-}
-
-
-
-/* summary {
-    flex-basis: 30%;
-    margin-bottom: 10px;
-    padding: 15px;
-
-    height: 55px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-summary:hover {
-
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-} */
-
-@media (max-width: 768px) {
-    /* summary {
-        flex-basis: 30%;
-        margin-bottom: 10px;
-        padding: 15px;
-
-        height: 90px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-    } */
-
-
-    .card {
-        margin-bottom: 20px;
-
-    }
-}
-
-@media (max-width: 480px) {
-    /* summary {
-       
-        text-align: left;
-        width: 100%;
-        margin-bottom: 20px;
-        padding: 15px;
-        height: 140px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-    } */
-
-    .card {
-        margin-bottom: 10px;
-    }
-}
-
-
 
 .card {
     opacity: 0;
@@ -265,264 +165,88 @@ summary:hover {
     transform: scale(1);
 }
 
-.progress-bar-animated {
-    animation: progress 4s ease-in-out;
-}
+/* -----------------------------
+   Progress Bars Animations
+----------------------------- */
+.progress-bar-animated { animation: progress 4s ease-in-out; }
+.progress-bar-animated1 { animation: progress1 4s ease-in-out; }
+.progress-bar-animated2 { animation: progress2 4s ease-in-out; }
+.progress-bar-animated3 { animation: progress3 4s ease-in-out; }
+.progress-bar-animated4 { animation: progress4 4s ease-in-out; }
+.progress-bar-animated5 { animation: progress5 4s ease-in-out; }
+.progress-bar-animated6 { animation: progress6 4s ease-in-out; }
+.progress-bar-animated7 { animation: progress7 4s ease-in-out; }
+.progress-bar-animated8 { animation: progress8 4s ease-in-out; }
 
-@keyframes progress {
-    0% {
-        width: 0;
-    }
+@keyframes progress { 0% { width: 0; } 100% { width: 85%; } }
+@keyframes progress1 { 0% { width: 0; } 100% { width: 100%; } }
+@keyframes progress2 { 0% { width: 0; } 100% { width: 90%; } }
+@keyframes progress3 { 0% { width: 0; } 100% { width: 60%; } }
+@keyframes progress4 { 0% { width: 0; } 100% { width: 40%; } }
+@keyframes progress5 { 0% { width: 0; } 100% { width: 70%; } }
+@keyframes progress6 { 0% { width: 0; } 100% { width: 45%; } }
+@keyframes progress7 { 0% { width: 0; } 100% { width: 65%; } }
+@keyframes progress8 { 0% { width: 0; } 100% { width: 75%; } }
 
-    100% {
-        width: 85%;
-    }
-}
-
-.progress-bar-animated1 {
-    animation: progress1 4s ease-in-out;
-}
-
-@keyframes progress1 {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 100%;
-    }
-}
-
-.progress-bar-animated2 {
-    animation: progress2 4s ease-in-out;
-}
-
-@keyframes progress2 {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 90%;
-    }
-}
-
-.progress-bar-animated3 {
-    animation: progress3 4s ease-in-out;
-}
-
-@keyframes progress3 {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 60%;
-    }
-}
-
-.progress-bar-animated4 {
-    animation: progress4 4s ease-in-out;
-}
-
-@keyframes progress4 {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 40%;
-    }
-}
-
-.progress-bar-animated5 {
-    animation: progress5 4s ease-in-out;
-}
-
-@keyframes progress5 {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 70%;
-    }
-}
-.progress-bar-animated6 {
-    animation: progress6 4s ease-in-out;
-}
-
-@keyframes progress6 {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 45%;
-    }
-}
-
-.progress-bar-animated7 {
-    animation: progress7 4s ease-in-out;
-}
-
-@keyframes progress7 {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 65%;
-    }
-}
-.progress-bar-animated8 {
-    animation: progress8 4s ease-in-out;
-}
-
-@keyframes progress8 {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 75%;
-    }
-}
-
-/* project css */
-/* Project section styles */
+/* -----------------------------
+   Project Section
+----------------------------- */
 .project {
-    /* padding: 20px; */
-
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    scroll-margin-top: 100px;
 }
 
 .project h3 {
     margin-top: 0;
     font-weight: bold;
     color: #ede9e9;
-    /* White text for better contrast */
 }
 
-/* Card styles within project section */
 .project .card {
     margin: 15px;
     padding: 20px;
-    background-color:transparent;
+    background-color: transparent;
     border: 1px solid #fcf9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0.8;
+    transform: translateY(20px);
 }
 
 .project .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Animation when project section is scrolled into view */
-.project .card {
-    opacity: 0.8;
-    transform: translateY(20px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 .project .card.animate {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Add animation when project section is scrolled into view */
-.project {
-    scroll-margin-top: 100px;
+.project .card:nth-child(1) { animation-delay: 0.2s; }
+.project .card:nth-child(2) { animation-delay: 0.4s; }
+.project .card:nth-child(3) { animation-delay: 0.6s; }
+.project .card:nth-child(4) { animation-delay: 0.8s; }
+.project .card:nth-child(5) { animation-delay: 1s; }
+.project .card:nth-child(6) { animation-delay: 1.2s; }
+
+@media (max-width: 992px) {
+    .project .card { margin: 10px; padding: 10px; }
 }
 
-.project .card:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.project .card:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.project .card:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-.project .card:nth-child(4) {
-    animation-delay: 0.8s;
-}
-
-.project .card:nth-child(5) {
-    animation-delay: 1s;
-}
-
-.project .card:nth-child(6) {
-    animation-delay: 1.2s;
-}
-
-@media (min-width: 768px) and (max-width: 992px) {
-    .project {
-        padding: 15px;
-    }
-
-    .project .card {
-        margin: 15px;
-        padding: 15px;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 768px) {
-    .project {
-        padding: 10px;
-    }
-
-    .project .card {
-        margin: 10px;
-        padding: 10px;
-    }
-}
-
-/* Extra small screen size (less than 576px) */
-@media (max-width: 576px) {
-    .project {
-        padding: 5px;
-    }
-
-    .project .card {
-        margin: 5px;
-        padding: 5px;
-    }
-}
-
-.container2 {
-    max-width: 1200px;
-    color: #ece8e8;
-    padding: 20px;
-}
-
-/* cirtificate css*/
-.container2 {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
+/* -----------------------------
+   Certificates Section
+----------------------------- */
 .certificates {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
-
-
-
 }
 
 .certificate {
-    /* background-color: #fff; */
     padding: 20px;
-
     border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .certificate img {
@@ -552,42 +276,16 @@ summary:hover {
     cursor: pointer;
 }
 
-.view-button:hover {
-    background-color: #3e8e41;
-}
+.view-button:hover { background-color: #3e8e41; }
 
-.certificate-details {
-    display: none;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-}
+.certificate-details { display: none; padding: 20px; border: 1px solid #ddd; background-color: #f9f9f9; }
 
-.certificate-details p {
-    font-size: 14px;
-    color: #666;
-}
-
-/* Show certificate details on button click */
-.certificate button.view-button:focus+.certificate-details {
+.certificate button.view-button:focus + .certificate-details {
     display: block;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .certificates {
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-}
-
-@media (max-width: 480px) {
-    .certificates {
-        grid-template-columns: 1fr;
-        width: 100%;
-    }
-}
-
+@media (max-width: 768px) { .certificates { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .certificates { grid-template-columns: 1fr; width: 100%; } }
 .modal-scr {
     max-width: 720px;
     /* set a maximum width */
