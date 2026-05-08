@@ -102,6 +102,20 @@ function updateThemeIcon(theme) {
     }
 }
 
+// Resume Download Handler (Placeholder)
+const resumeBtn = document.getElementById('resumeBtn');
+if (resumeBtn) {
+    resumeBtn.addEventListener('click', (e) => {
+        // Since we don't have a real file, we'll alert the user to upload one
+        // If the file were there, the 'download' attribute would handle it.
+        // This is just to be helpful to the user who asked for it.
+        const fileExists = false; // Set to true if you upload resume.pdf
+        if (!fileExists && resumeBtn.getAttribute('href') === 'resume.pdf') {
+            console.log("Please upload a file named 'resume.pdf' to the root directory for this functionality to work.");
+        }
+    });
+}
+
 // Image Modal Logic
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImg');
@@ -115,7 +129,7 @@ document.querySelectorAll('.cert-item').forEach(item => {
         const org = item.querySelector('p').textContent;
         
         if (modal && modalImg && captionText) {
-            modal.style.display = "block";
+            modal.style.display = "flex";
             modalImg.src = imgPath;
             captionText.innerHTML = `<strong>${title}</strong><br>${org}`;
             document.body.style.overflow = 'hidden'; // Disable scroll
